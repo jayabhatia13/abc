@@ -1,0 +1,79 @@
+package PracticeCode;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.Select;
+
+public class Shopping
+[
+
+@Test
+public void Shopping() throws IOException
+{
+System.setProperty("webdriver.gecko.driver","C:\\Users\\RahKumar\\Desktop\\Remote\\geckodriver.exe");
+
+WebDriver driver =new FirefoxDriver();
+driver.navigate().to(" http://automationpractice.com/index.php");
+WebElement Email=driver.findElement(By.xpath("//input[@id='email']"));
+Email.sendKeys(“jayabhatia1300@gmail.com");
+WebElement Password=driver.findElement(By.xpath("//input[@id='passwd']"));
+Password.sendKeys(“123456");
+WebElement SignIn=driver.findElement(By.xpath("//input[@id='submitlogin']")).click();
+WebElement Women=driver.findElement(By.xpath("//input[@title=’Women’]")).click();
+WebElement Tops=driver.findElement(By.xpath("//input[@title=’T-shirts’]")).click();
+
+WebElement More=driver.findElement(By.xpath("//input[@title=’View’]")).click();
+WebElement Quantity=driver.findElement(By.xpath("//i[@class=’icon-plus’]")).click();
+
+Select Size=new Select(driver.findElement(By.name(“group_1”));
+Size.selectByVisibleTExt(“L”);
+
+WebElement Colour=driver.findElement(By.xpath("//a[@title=’Blue’]")).click();
+WebElement Quantity=driver.findElement(By.xpath("//i[@class=’icon-plus’]")).click();
+WebElement Cart=driver.findElement(By.xpath ("//button[contains(text(),'Add to Your Cart')]";
+WebElement Checkout=driver.findElement(By.xpath ("//a[@title='View my shopping cart')]";
+
+WebElement Checkout1=driver.findElement(By.xpath ("//a[@title='Check out')]".click();
+
+WebElement Proceed=driver.findElement(By.xpath ("//a[@title='Proceed to Checkout')]".click();
+WebElement CartAddress=driver.findElement(By.xpath ("//button[@name=’processAddress')]";
+CartAddress.click();
+WebElement check=driver.findElement(By.xpath("//input[@id=’cgv’]"));
+
+WebElement Carrier=driver.findElement(By.xpath ("//button[@name=’processCarrier')]";
+Carrier.click();
+
+WebElement Proceed=driver.findElement(By.xpath ("//a[@title='Pay by bank wire')]".click();
+
+WebElement Confirm=driver.findElement(By.xpath ("//button[contains(text(),'I confirm my order')]";
+Confirm.click();
+
+driver.findElement(By.xpath ("//a[@title='View my customer account')]".click();
+driver.findElement(By.xpath ("//a[ contains(text(),'Order history and details')]".click();
+
+driver .close();
+
+}
+}
+
+
+
+
+
