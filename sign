@@ -1,0 +1,94 @@
+package PracticeCode;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.Select;
+
+public class SignIn {
+
+
+   @Test
+public void SignIn() throws IOException
+{
+System.setProperty("webdriver.gecko.driver","C:\\Users\\RahKumar\\Desktop\\Remote\\geckodriver.exe");
+
+WebDriver driver =new FirefoxDriver();
+driver.navigate().to(" http://automationpractice.com/index.php");
+WebElement SignIn=driver.findElement(By.xpath("//input[@class='login']")).click();
+WebElement Email=driver.findElement(By.xpath("//input[@id='email create']"));
+Email.sendKeys(“jayabhatia1300@gmail.com");
+
+
+WebElement CreateAccount=driver.findElement(By.xpath("//input[@class='hidden']")).click();
+
+List  RadioButton = driver.findElements(By.name("Title"))
+boolean bValue = false;
+ 
+bValue = RadioButton.get(0).isSelected();
+
+ if(bValue = true){
+ 
+
+ RadioButton.get(1).click();
+ 
+ }else{
+ 
+ RadioButton.get(0).click();
+}
+ 
+WebElement FirstName=driver.findElement(By.xpath("//input[@id='customer_firstname']"));
+FirstName.sendKeys(“jaya");
+WebElement LastName=driver.findElement(By.xpath("//input[@id='customer_lastname']"));
+LastName.sendKeys(“bhatia");
+WebElement Password=driver.findElement(By.xpath("//input[@id='passwd']"));
+Password.sendKeys(“abcde");
+Int count=Password.size();
+If(count<5)
+{
+System.out.println(“Password should be minimum 5 caracters”);
+}
+Select Date=new Select(driver.findElement(By.name(“days”));
+Date.selectByVisibleTExt(“13”);
+Select Month=new Select(driver.findElement(By.name(“months”));
+Month.selectByVisibleTExt(“January”);
+Select Year=new Select(driver.findElement(By.name(“years”));
+Year.selectByVisibleTExt(“1994”);
+
+
+WebElement Address=driver.findElement(By.xpath("//input[@id='address1']"));
+Address.sendKeys(“ABC Road,XYZ India Ltd");
+WebElement City=driver.findElement(By.xpath("//input[@id='city’]"));
+City.sendKeys(“Mumbai");
+Select State=new Select(driver.findElement(By.name(“id_state”));
+State.selectByVisibleTExt(“Maharashtra”);
+WebElement postcode=driver.findElement(By.xpath("//input[@id='postcode']"));
+postcode.sendKeys(“421301");
+Select Country=new Select(driver.findElement(By.name(“id_country”));
+Country.selectByVisibleTExt(“India”);
+WebElement Phone=driver.findElement(By.xpath("//input[@id='phone_mobile’]"));
+Phone.sendKeys(“8080073656");
+WebElement Alias=driver.findElement(By.xpath("//input[@id='alias’]"));
+Alias.sendKeys(“ABC");
+WebElement Register=driver.findElement(By.xpath ("//button[@id=’submitAccount')]";
+Register.click();
+driver.close();
+}
+
+}
